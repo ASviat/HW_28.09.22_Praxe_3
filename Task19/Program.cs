@@ -26,32 +26,29 @@ int quantity=QuantInt(num);
 int [] arr=new int[quantity];
 int krat=1;
 int rightSide=quantity;
-
-for (int i = 0; i < quantity; i++)
+arr[0]=num%10;
+for (int i = 1; i < quantity; i++)
 {
-    arr[i]=(num/(10*krat))%10; // 12345/100=123 мб добавить заполнение для первой позиции. Помни, что цикл перевернут! С этим разобраться, чтобы нормально писался
+    arr[i]=(num/(10*krat))%10;
     krat=krat*10;
     Console.Write($"{arr[i]}");
 }
-// arr[quantity-1]=(num/10)%10;
-// arr[quantity-rightSide]=num%10;
 
-// int simetry=quantity/2;
-// int steps=0;
-// int count=1;
+for (int i = 0; i < quantity; i++)
+{
+    Console.Write($">>{arr[i]}  ");
+}
 
-// while (arr[quantity-rightSide]==arr[quantity-count]&&count-1!=simetry)
-// {
-//     rightSide--;
-//     count++;
-//     steps++;
-// }
-// Console.WriteLine($">{arr[4]}");
-// Console.WriteLine($"steps>{steps}");
+int simetry=quantity/2;
+ int steps=0;
+ int count=1;
 
-// if (steps<simetry) Console.WriteLine("Не полиндром");
-// else Console.WriteLine("Таки полиндром!!!");
+while (arr[quantity-rightSide]==arr[quantity-count]&&count-1!=simetry)
+{
+    rightSide--;
+    count++;
+    steps++;
+}
 
-
-//Console.WriteLine($"{}");
-
+if (steps<simetry) Console.WriteLine("Не полиндром");
+else Console.WriteLine("Таки полиндром!!!");
